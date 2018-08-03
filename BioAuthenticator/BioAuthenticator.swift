@@ -66,7 +66,7 @@ public extension BioAuthenticator {
         let context = LAContext()
         if context.canEvaluatePolicy(LAPolicy.deviceOwnerAuthenticationWithBiometrics, error: nil) {
             if #available(iOS 11.0, *) {
-                return (context.biometryType == .faceID)
+                return (context.biometryType == LABiometryType.faceID)
             }
         }
         return false
@@ -77,7 +77,7 @@ public extension BioAuthenticator {
         let context = LAContext()
         if context.canEvaluatePolicy(LAPolicy.deviceOwnerAuthenticationWithBiometrics, error: nil) {
             if #available(iOS 11.0, *) {
-                return (context.biometryType == .touchID)
+                return (context.biometryType == LABiometryType.touchID)
             }
             return true
         }
