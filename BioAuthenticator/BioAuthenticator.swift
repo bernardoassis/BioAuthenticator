@@ -126,7 +126,7 @@ public extension BioAuthenticator {
         ctx.evaluatePolicy(policy, localizedReason: reason) { (success, err) in
             if success { successBlock() }
             else {
-                let errorType = BioErrors(error: err as! LAError)
+                let errorType = BioErrors.constructor(error: err as! LAError)
                 failureBlock(errorType)
             }
         }
