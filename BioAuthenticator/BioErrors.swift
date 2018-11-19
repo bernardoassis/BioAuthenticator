@@ -33,7 +33,7 @@ public enum BioErrors {
     
     case appCancel, failed, userCancel, userFallback, systemCancel, passcodeNotSet, biometryNotEnrolled, biometryLockedout, invalidContext , biometryNotAvailable,other
     
-    public static func `init`(error: LAError) -> BioErrors {
+    public static func init(error: LAError) -> BioErrors {
         switch Int32(error.errorCode) {
             
         case kLAErrorAuthenticationFailed:
